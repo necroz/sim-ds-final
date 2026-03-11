@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, PositiveInt, computed_field
 from loguru import logger
 from pathlib import Path
-from inference import load_model, predict
+from src.inference import load_model, predict
 import pandas as pd
 
 

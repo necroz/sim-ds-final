@@ -45,66 +45,24 @@ sim-ds-final/
 ### 1️⃣ Клонирование репозитория
 
 ```bash
-git clone https://github.com/totiela/sim-ds-model-as-a-service
+git clone https://github.com/necroz/sim-ds-final
 ```
 
 ---
 
-### 2️⃣ Создание виртуального окружения
-
-#### 🪟 Windows (PowerShell)
+## 🚀 Запуск FastAPI в Docker контейнере
 
 ```bash
-python -m venv .venv
-.venv\Scripts\Activate.ps1
+docker build -t fastapi-predictor .
 ```
-
-> ⚠️ Если PowerShell ругается на политику выполнения:
-
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-```
-
----
-
-#### 🍎 macOS / 🐧 Linux
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
----
-
-### 3️⃣ Установка зависимостей
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 🚀 Запуск FastAPI
-
-```bash
-uvicorn src.main:app --reload --port 8000
+docker run --name my_fastapi_predictor -p 8000:8000 fastapi-predictor
 ```
 
 API будет доступно по адресу:
 
 👉 [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
----
-
-## 📚 Swagger / OpenAPI
-
-FastAPI автоматически генерирует документацию:
-
-- Swagger UI:
-  👉 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
-
-- OpenAPI schema:
-  👉 [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
 
 ---
 
